@@ -7,7 +7,7 @@
   max-width: 250px;
   min-height: 100px;
   border-radius: 5px;
-  
+  background-color: white;
 }
 
 .cleaning-list-card p {
@@ -16,9 +16,11 @@
 
 .cleaning-list-ct {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
+  
 }
 
 .cleaning-list-card .title {

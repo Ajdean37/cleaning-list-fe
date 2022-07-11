@@ -57,6 +57,45 @@ let cleaningLists = [
       is_clean: false,
     },
   },
+  {
+    id: 5,
+    is_complete: false,
+    day: {
+      id: 5,
+      name: "Friday",
+    },
+    room: {
+      id: 5,
+      name: "Dining Room",
+      is_clean: false,
+    },
+  },
+  {
+    id: 6,
+    is_complete: false,
+    day: {
+      id: 6,
+      name: "Saturday",
+    },
+    room: {
+      id: 6,
+      name: "Yard",
+      is_clean: false,
+    },
+  },
+  {
+    id: 7,
+    is_complete: false,
+    day: {
+      id: 7,
+      name: "Sunday",
+    },
+    room: {
+      id: 7,
+      name: "Deep Clean",
+      is_clean: false,
+    },
+  },
 ]
 
 const CleaningListsView = ({dispatch, dailyChoresLists}) => {
