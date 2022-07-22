@@ -15,8 +15,23 @@ function* getAllDailyChoresLists( action ) {
   }
 }
 
+function* selectChoresById( action ) {
+
+
+  try {
+   
+    const response = yield axios.get(`http://localhost:5000/api/daily-chores-lists/${action.payload.id}`);
+    
+    yield put( {type: 'SET_SELECTED_CHORES', payload: response.data} );
+
+  }catch ( error ) {
+    console.error(error);
+  }
+}
+
 function* handleDailyChoresListSaga() {
   yield takeLatest('GET_ALL_DAILY_CHORES_LISTS', getAllDailyChoresLists );
+  yield takeLatest('SELECT_LAUNCH_BY_ID', selectChoresById);
 }
 
 export default handleDailyChoresListSaga;
