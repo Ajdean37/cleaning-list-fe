@@ -25,16 +25,16 @@ const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
   }
 
   return(
-    <div className={`outer-ct-${activeDailyChoreList.id} outer-ct`}>
-      <p className='title'>{activeDailyChoreList.room.name}</p>
+    <div className='outer-list-ct'>
+      <p className='list-title'>{activeDailyChoreList.room.name}</p>
       <div className='list-item-ct'>
         {
           // cleaningLists.map( item => (
           activeDailyChoreList.list_items.map( item => (
           <div className='list-item-card' key={item.id}>
-            <span><input checked={item.is_complete} data-id={item.id} type='checkbox' onClick={handleIsComplete}></input></span>
-            <p className='list-item'>{item.detail}</p>
+            <span><input className='checkbox' checked={item.is_complete} data-id={item.id} type='checkbox' onClick={handleIsComplete}></input></span>
             <p className='person'>{item.person.name}</p>
+            <p className='list-item'>{item.detail}</p>
             <p className='star-value'>{item.star_value.name}</p>
           </div>
         ))

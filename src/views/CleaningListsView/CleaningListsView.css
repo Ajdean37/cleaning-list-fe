@@ -1,3 +1,9 @@
+body {
+  background: URL(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5grAEPT8-SbZMc3pKfPqMCXlQ3luZ1O8k7A&usqp=CAU);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .cleaning-list-card {
   border: 1px black solid;  
   display: flex;
@@ -11,8 +17,6 @@
   margin: 3%;
 }
 
-
-
 .cleaning-list-card p {
   margin: 5px;
 }
@@ -23,7 +27,6 @@
   justify-content: center;
   /* align-items: center; */
   height: 100%;
-
 }
 
 .cleaning-list-card .title {
