@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import dailyChoresListItem from "./dailyChoresListItemsReducer";
+import activeDailyChoreList from "./activeDailyChoreListReducer";
 import dailyChoresLists from "./dailyChoresListsReducer";
 
 
 const rootReducer = combineReducers({
 
   dailyChoresLists,
-  dailyChoresListItem,
+  activeDailyChoreList,
 
 });
 

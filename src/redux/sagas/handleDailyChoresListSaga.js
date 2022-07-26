@@ -7,7 +7,6 @@ function* getAllDailyChoresLists( action ) {
     const response = yield axios.get('http://localhost:5000/api/daily-chores-lists');
 
     let reducerAction = {type: 'SET_ALL_DAILY_CHORES_LISTS', payload: response.data}
-    console.log(response.data);
     yield put( reducerAction );
 
   }catch ( error ) {
@@ -15,14 +14,13 @@ function* getAllDailyChoresLists( action ) {
   }
 }
 
-function* getAllChoresListItems( action ) {
-
+function* getDailyChoresListById( action ) {
 
   try {
    
-    const response = yield axios.get(`http://localhost:5000/api/cleaning-lists`);
-    
-    yield put( {type: 'SET_ALL_CHORES_LISTS_ITEMS', payload: response.data} );
+    const response = yield axios.get(`http://localhost:5000/api/daily-chores-lists/${action.payload.id}`);
+
+    yield put( {type: 'SET_ACTIVE_DAILY_CHORE_LIST', payload: response.data} );
 
   }catch ( error ) {
     console.error(error);
@@ -31,7 +29,7 @@ function* getAllChoresListItems( action ) {
 
 function* handleDailyChoresListSaga() {
   yield takeLatest('GET_ALL_DAILY_CHORES_LISTS', getAllDailyChoresLists );
-  yield takeLatest('GET_ALL_CHORES_LISTS_ITEMS', getAllChoresListItems);
+  yield takeLatest('GET_ACTIVE_DAILY_CHORE_LIST', getDailyChoresListById);
 }
 
 export default handleDailyChoresListSaga;
