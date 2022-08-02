@@ -49,12 +49,12 @@ High level list of items completed.
 - [x] Create daily chores list
 - [x] Delete daily chores list by id
 - [x] Update daily chores list by id
+- [x] toggle is complete by daily chore list  
 
 ### Next Steps
 
 Features that you would like to add at some point in the future.
 
-- [ ] toggle is complete by daily chore list  
 (feature-a)
 - [ ] global reset button
 - [ ] toggle is complete if all li are complete

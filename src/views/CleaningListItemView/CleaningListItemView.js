@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './CleaningListItemView.css';
 import { useParams } from "react-router-dom";
-import { Link } from 'react-router-dom';
+
 
 
 const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
@@ -11,8 +11,6 @@ const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
     let action = {type: 'GET_ACTIVE_DAILY_CHORE_LIST', payload: {id: params.id}};
     dispatch(action);
   }, []);
-
-  console.log(activeDailyChoreList.list_items);
 
   function handleIsComplete( e ) {
     let payload = {
@@ -23,6 +21,14 @@ const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
       type: 'UPDATE_LIST_ITEM_IS_COMPLETE', payload: payload
     };
     dispatch(action);    
+  }
+
+  function handleToggleAll( e ) {
+    let value = e.target.value === "false" ? false : true; 
+    let action = {
+      type: 'TOGGLE_ALL_IS_COMPLETE', payload: {is_complete: !value, dailyChoreListId: params.id}
+    };
+    dispatch(action)
   }
 
   return(
@@ -42,7 +48,7 @@ const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
             ))
           }
         </table>
-      <Link to='/cleaning-lists'><div><button className='list-complete' >List Complete</button></div></Link>
+      <div><button className='list-complete' onClick={handleToggleAll} value={activeDailyChoreList.is_complete}>List Complete</button></div>
     </div>
   </div>
   )
