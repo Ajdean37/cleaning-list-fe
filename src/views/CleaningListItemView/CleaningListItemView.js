@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './CleaningListItemView.css';
 import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 
 const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
@@ -26,19 +27,22 @@ const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
 
   return(
     <div className='outer-list-ct'>
-      <p className='list-title'>{activeDailyChoreList.room.name}</p>
+      <h1 className='list-title'>{activeDailyChoreList.room.name}</h1>
       <div className='list-item-ct'>
-        {
-          // cleaningLists.map( item => (
-          activeDailyChoreList.list_items.map( item => (
-          <div className='list-item-card' key={item.id}>
-            <span><input className='checkbox' checked={item.is_complete} data-id={item.id} type='checkbox' onClick={handleIsComplete}></input></span>
-            <p className='person'>{item.person.name}</p>
-            <p className='list-item'>{item.detail}</p>
-            <p className='star-value'>{item.star_value.name}</p>
-          </div>
-        ))
-      }
+        <div className='list-ct'>
+          {
+            // cleaningLists.map( item => (
+            activeDailyChoreList.list_items.map( item => (
+            <tr className='list-item-card' key={item.id}>
+              <span><input className='checkbox' checked={item.is_complete} data-id={item.id} type='checkbox' onClick={handleIsComplete}></input></span>
+              <td className='person'>{item.person.name}</td>
+              <td className='list-item'>{item.detail}</td>
+              <td className='star-value'>{item.star_value.name} </td>
+            </tr>
+            ))
+          }
+        </div>
+      <Link to='/cleaning-lists'><div><button className='list-complete' >List Complete</button></div></Link>
     </div>
   </div>
   )
