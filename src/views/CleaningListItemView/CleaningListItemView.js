@@ -29,7 +29,7 @@ const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
     <div className='outer-list-ct'>
       <h1 className='list-title'>{activeDailyChoreList.room.name}</h1>
       <div className='list-item-ct'>
-        <div className='list-ct'>
+        <table className='table'>
           {
             // cleaningLists.map( item => (
             activeDailyChoreList.list_items.map( item => (
@@ -41,7 +41,7 @@ const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
             </tr>
             ))
           }
-        </div>
+        </table>
       <Link to='/cleaning-lists'><div><button className='list-complete' >List Complete</button></div></Link>
     </div>
   </div>
