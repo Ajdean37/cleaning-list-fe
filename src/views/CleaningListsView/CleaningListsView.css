@@ -38,7 +38,6 @@ body {
 
 .cleaning-list-card .subtitle {
   font-family: var(--font-family1);
-  
 }
 
 .view-list {
@@ -58,6 +57,12 @@ body {
   font-weight: 300;
   font-family: Arial Black;
   color: rgba(28, 11, 179, 0.899);
-  
 }
 
+.reset-list {
+  background-color: rgba(28, 11, 179, 0.899);
+  border-radius: 5px;
+  color: white;
+  padding: 12px 28px;
+
+}

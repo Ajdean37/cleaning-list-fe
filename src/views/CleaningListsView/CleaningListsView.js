@@ -14,18 +14,19 @@ const CleaningListsView = ({dispatch, dailyChoresLists}) => {
   return(
   <div className='outer-ct'>
     <h1 className='cleaning-list-title'>Daily Cleaning List</h1>
-    <div className='cleaning-list-ct'>
-      {
-        // cleaningLists.map( item => (
-        dailyChoresLists.map( item => (
-          <div className='cleaning-list-card' key={item.id}>
-            <p className='title'>{item.day.name}</p>
-            <p className='subtitle'>{item.room.name}</p>
-            <Link to={`/cleaning-lists/${item.id}`}><div><button className='view-list'>View List</button></div></Link>
-          </div>
-        ))
-      }
-    </div>
+      <div className='cleaning-list-ct'>
+          {
+            // cleaningLists.map( item => (
+            dailyChoresLists.map( item => (
+              <div className='cleaning-list-card' key={item.id}>
+                <p className='title'>{item.day.name}</p>
+                <p className='subtitle'>{item.room.name}</p>
+                <Link to={`/cleaning-lists/${item.id}`}><div><button className='view-list'>View List</button></div></Link>
+              </div>
+            ))
+          }
+      </div>
+    <div><button className='reset-list'>Reset Lists</button></div>
   </div>
   )
 }
