@@ -31,10 +31,27 @@ function* toggleAllIsComplete( action ) {
   }
 }
 
+function* toggleResetAll( action ) {
+
+  try {
+ 
+    let body = {is_complete: action.payload.is_complete}
+    const response3 = yield axios.put(`http://localhost:5000/api/daily-chores-lists/${action.payload.dailyChoreListId}/list-items/toggle-reset-all`, body);
+
+    const response4 = yield axios.get(`http://localhost:5000/api/daily-chores-lists/${action.payload.dailyChoreListId}`)
+    yield put( {type: 'SET_ACTIVE_DAILY_CHORE_LIST', payload: response4.data} );
+
+  }catch ( error ) {
+    console.error(error);
+  }
+}
+
 
 function* handleListItemSaga() {
   yield takeLatest('UPDATE_LIST_ITEM_IS_COMPLETE', updateListItemIsComplete );
   yield takeLatest('TOGGLE_ALL_IS_COMPLETE', toggleAllIsComplete );
+  yield takeLatest('TOGGLE-RESET-ALL', toggleResetAll);
+  
 }
 
 

@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import './CleaningListItemView.css';
 import { useParams } from "react-router-dom";
 
-
-
 const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
   const params = useParams();
   useEffect(() => {
@@ -35,19 +33,19 @@ const CleaningListItemView = ({dispatch, activeDailyChoreList}) => {
     <div className='outer-list-ct'>
       <h1 className='list-title'>{activeDailyChoreList.room.name}</h1>
       <div className='list-item-ct'>
-        <table className='table'>
+        <div><table className='table'>
           {
             // cleaningLists.map( item => (
             activeDailyChoreList.list_items.map( item => (
-            <tr className='list-item-card' key={item.id}>
+            <tbody className='list-item-card' key={item.id}>
               <span><input className='checkbox' checked={item.is_complete} data-id={item.id} type='checkbox' onClick={handleIsComplete}></input></span>
               <td className='person'>{item.person.name}</td>
               <td className='list-item'>{item.detail}</td>
               <td className='star-value'>{item.star_value.name} </td>
-            </tr>
+            </tbody>
             ))
           }
-        </table>
+        </table></div>
       <div><button className='list-complete' onClick={handleToggleAll} value={activeDailyChoreList.is_complete}>List Complete</button></div>
     </div>
   </div>
