@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { takeLatest, put } from "redux-saga/effects"
+import envjson from "../../env.json"
 
 function* getAllDailyChoresLists( action ) {
-
   try {
-    const response = yield axios.get('http://localhost:5000/api/daily-chores-lists');
+    const response = yield axios.get(`${envjson.domain}/api/daily-chores-lists`);
 
     let reducerAction = {type: 'SET_ALL_DAILY_CHORES_LISTS', payload: response.data}
     yield put( reducerAction );
@@ -18,7 +18,7 @@ function* getDailyChoresListById( action ) {
 
   try {
    
-    const response = yield axios.get(`http://localhost:5000/api/daily-chores-lists/${action.payload.id}`);
+    const response = yield axios.get(`${envjson.domain}/api/daily-chores-lists/${action.payload.id}`);
 
     yield put( {type: 'SET_ACTIVE_DAILY_CHORE_LIST', payload: response.data} );
 

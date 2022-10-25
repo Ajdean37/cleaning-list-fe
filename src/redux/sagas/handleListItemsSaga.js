@@ -1,5 +1,6 @@
 import axios from "axios";
 import { put, takeLatest } from "redux-saga/effects";
+import envjson from '../../env.json'
 
 
 function* updateListItemIsComplete( action ) {
@@ -7,7 +8,7 @@ function* updateListItemIsComplete( action ) {
   try {
    
     let body = {is_complete: action.payload.is_complete}
-    const response = yield axios.put(`http://localhost:5000/api/list-items/${action.payload.id}`, body);
+    const response = yield axios.put(`${envjson.domain}/api/list-items/${action.payload.id}`, body);
 
     yield put( {type: 'UPDATE_ACTIVE_DAILY_CHORES_LIST_ITEM_IS_COMPLETE', payload: response.data} );
 
@@ -21,9 +22,9 @@ function* toggleAllIsComplete( action ) {
   try {
  
     let body = {is_complete: action.payload.is_complete}
-    const response1 = yield axios.put(`http://localhost:5000/api/daily-chores-lists/${action.payload.dailyChoreListId}/list-items/toggle-all-is-complete`, body);
+    const response1 = yield axios.put(`${envjson.domain}/api/daily-chores-lists/${action.payload.dailyChoreListId}/list-items/toggle-all-is-complete`, body);
 
-    const response2 = yield axios.get(`http://localhost:5000/api/daily-chores-lists/${action.payload.dailyChoreListId}`)
+    const response2 = yield axios.get(`${envjson.domain}/api/daily-chores-lists/${action.payload.dailyChoreListId}`)
     yield put( {type: 'SET_ACTIVE_DAILY_CHORE_LIST', payload: response2.data} );
 
   }catch ( error ) {
@@ -35,8 +36,8 @@ function* toggleResetAll( action ) {
 
   try {
  
-    const response1 = yield axios.put(`http://localhost:5000/api/daily-chores-lists/list-items/toggle-all-reset`);
-    const response2 = yield axios.get('http://localhost:5000/api/daily-chores-lists');
+    const response1 = yield axios.put(`${envjson.domain}/api/daily-chores-lists/list-items/toggle-all-reset`);
+    const response2 = yield axios.get(`${envjson.domain}/api/daily-chores-lists`);
 
     yield put( {type: 'SET_ALL_DAILY_CHORES_LISTS', payload: response2.data} );
 
