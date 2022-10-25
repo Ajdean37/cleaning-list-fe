@@ -44,3 +44,5 @@ const mapStateToProps = ({ dailyChoresLists }) => ({ dailyChoresLists });
 
 // export default CleaningListsView
 export default connect(mapStateToProps)(CleaningListsView);
+
+
