@@ -19,7 +19,7 @@ const CleaningListsView = ({dispatch, dailyChoresLists}) => {
     console.log(action);
     dispatch(action)
   }
-console.log(dailyChoresLists);
+
   return(
   <div className='outer-ct' >
     <h1 className='cleaning-list-title'>Daily Cleaning List</h1>

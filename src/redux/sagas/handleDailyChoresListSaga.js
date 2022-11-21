@@ -5,7 +5,7 @@ import envjson from "../../env.json"
 function* getAllDailyChoresLists( action ) {
   try {
     const response = yield axios.get(`${envjson.domain}/api/daily-chores-lists`);
-    console.log(envjson.domain);
+
     let reducerAction = {type: 'SET_ALL_DAILY_CHORES_LISTS', payload: response.data}
     yield put( reducerAction );
 

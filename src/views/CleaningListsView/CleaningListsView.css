@@ -1,3 +1,6 @@
+.outer-ct {
+  background: URL(https://thumbs.dreamstime.com/b/cleaning-tools-sketch-seamless-pattern-hand-drawn-cartoon-icons-bucket-sponge-mop-gloves-spray-brush-shovel-doodle-drawing-66215943.jpg);
+}
 
 .cleaning-list-card {
   border: 1px black solid;  
@@ -62,3 +65,48 @@
   padding: 12px 28px;
 
 }
+
+/* LIST ITEM VIEW */
+/* body {
+  background: URL(  background: URL(https://thumbs.dreamstime.com/b/cleaning-tools-sketch-seamless-pattern-hand-drawn-cartoon-icons-bucket-sponge-mop-gloves-spray-brush-shovel-doodle-drawing-66215943.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+} */
+
+/* MONDAY */
+/* body {
+  background: URL(https://img.freepik.com/free-vector/bathroom-interior-vintage-french-provence-style-illustration_33099-799.jpg?w=2000);
+  background-size: cover;
+  background-attachment: fixed;
+} */
+
+/* TUESDAY */
+/* body {
+  background: URL(https://thumbs.dreamstime.com/z/kid-bedroom-background-illustration-kid-bedroom-background-139245806.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+} */
+
+/* WEDNESDAY */
+/* body {
+  background: URL(https://img.freepik.com/free-vector/modern-kitchen-interior-background-template-cartoon-dinner-room-with-furniture_33099-131.jpg?w=2000);
+  background-size: cover;
+  background-attachment: fixed;
+} */
+
+/* THURSDAY */
+/* body {
+  background: URL(https://img.freepik.com/free-vector/modern-kitchen-interior-background-template-cartoon-dinner-room-with-furniture_33099-131.jpg?w=2000);
+  background-size: cover;
+  background-attachment: fixed;
+}
+} */
+
+/* FRIDAY */
+/* body {
+  background: URL(https://images.squarespace-cdn.com/content/v1/5a282561ace8649af35ab4e8/1512605147535-4YISBMER5A30LXY5YCI3/6.png;
+  )
+  background-size: cover;
+  background-attachment: fixed;
+} */
+

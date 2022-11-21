@@ -1,4 +1,9 @@
 .outer-list-ct {
+    background: URL(https://img.freepik.com/free-vector/bathroom-interior-vintage-french-provence-style-illustration_33099-799.jpg?w=2000);
+    background-size: cover;
+  }
+
+.outer-list-ct {
   display: flex;
   flex-direction: column;
   align-items: center;
