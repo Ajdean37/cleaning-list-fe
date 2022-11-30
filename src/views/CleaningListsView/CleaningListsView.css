@@ -1,5 +1,13 @@
+body, html {
+  height: 100%;
+}
+
 .outer-ct {
-  background: URL(https://thumbs.dreamstime.com/b/cleaning-tools-sketch-seamless-pattern-hand-drawn-cartoon-icons-bucket-sponge-mop-gloves-spray-brush-shovel-doodle-drawing-66215943.jpg);
+  background: URL(https://img.freepik.com/premium-vector/cleaning-tools-object-seamless-pattern-vector-graphic_7087-1889.jpg?w=2000);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .cleaning-list-card {

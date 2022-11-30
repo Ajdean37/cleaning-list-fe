@@ -4,10 +4,10 @@ import './HomeView.css'
 
 const HomeView = () => {
   return (
-    <div>
+    <div className='homeview-ct'>
 
       <div>
-        <Link to='/configs'><button>Configs</button></Link>
+        <Link to='https://inspiring-dieffenbachia-119d26.netlify.app/'><button>See a construction website I've been working on</button></Link>
       </div>
 
       <div>
